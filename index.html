@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freshgate East Africa Ltd</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-deep: #0d2b1a;
+    --green-mid: #1a4a2c;
+    --green-fresh: #2d7a4a;
+    --green-light: #4aaa6a;
+    --cream: #f5f0e8;
+    --cream-warm: #ede6d8;
+    --earth: #8b5e3c;
+    --earth-light: #c4956a;
+    --text-dark: #0d1f14;
+    --text-mid: #3a5a45;
+    --text-muted: #7a9a82;
+    --white: #ffffff;
+    --border: rgba(45, 122, 74, 0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 4rem;
+    background: rgba(245, 240, 232, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+  }
+
+  .nav-logo-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo-sub {
+    font-size: 0.65rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--green-fresh); }
+
+  .nav-cta {
+    background: var(--green-deep);
+    color: var(--cream) !important;
+    padding: 0.55rem 1.4rem;
+    border-radius: 2px;
+  }
+
+  .nav-cta:hover { background: var(--green-mid); color: var(--cream) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 4rem 6rem 4rem;
+    background: var(--cream);
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--green-fresh);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--green-deep);
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--earth);
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-mid);
+    max-width: 400px;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .btn-primary {
+    background: var(--green-deep);
+    color: var(--cream);
+    padding: 0.9rem 2.2rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--green-fresh); transform: translateY(-1px); }
+
+  .btn-secondary {
+    color: var(--green-mid);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-bottom: 1px solid var(--green-light);
+    padding-bottom: 2px;
+    transition: color 0.2s;
+  }
+
+  .btn-secondary:hover { color: var(--green-fresh); }
+
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .stat-item {}
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    display: block;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+    display: block;
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-img-main {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.9);
+  }
+
+  .hero-img-overlay {
+    position: absolute;
+    bottom: 2rem;
+    left: -2rem;
+    width: 55%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border: 4px solid var(--cream);
+    box-shadow: 0 8px 40px rgba(13,43,26,0.25);
+  }
+
+  .hero-badge {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    background: var(--green-deep);
+    color: var(--cream);
+    padding: 1rem;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-badge-text {
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.4;
+    opacity: 0.85;
+  }
+
+  /* MARQUEE */
+  .marquee-bar {
+    background: var(--green-deep);
+    padding: 0.9rem 0;
+    overflow: hidden;
+  }
+
+  .marquee-inner {
+    display: flex;
+    gap: 3rem;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+  }
+
+  .marquee-item {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.7;
+    flex-shrink: 0;
+  }
+
+  .marquee-dot {
+    color: var(--green-light);
+    opacity: 1;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ABOUT */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+  }
+
+  .about-images {
+    position: relative;
+    background: var(--green-deep);
+    overflow: hidden;
+    min-height: 600px;
+  }
+
+  .about-img-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    display: block;
+  }
+
+  .about-img-card {
+    position: absolute;
+    bottom: 3rem;
+    right: -1.5rem;
+    width: 55%;
+    border: 4px solid var(--cream);
+    display: block;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.4);
+  }
+
+  .about-content {
+    padding: 6rem 5rem;
+    background: var(--cream-warm);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--green-fresh);
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--green-fresh);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--green-deep);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .section-body {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: var(--text-mid);
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  .values-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .value-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: var(--cream);
+    border-left: 3px solid var(--green-fresh);
+  }
+
+  .value-icon {
+    font-size: 1.2rem;
+    color: var(--green-fresh);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .value-text strong {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--green-deep);
+    margin-bottom: 0.2rem;
+  }
+
+  .value-text span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* PRODUCTS */
+  .products {
+    padding: 8rem 4rem;
+    background: var(--cream);
+  }
+
+  .products-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    align-items: end;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .product-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+  }
+
+  .product-card:hover .product-img { transform: scale(1.06); }
+  .product-card:hover .product-overlay { opacity: 1; }
+
+  .product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+    filter: saturate(0.85);
+  }
+
+  .product-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13,43,26,0.9) 0%, rgba(13,43,26,0.3) 50%, transparent 100%);
+    opacity: 0.7;
+    transition: opacity 0.4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+  }
+
+  .product-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .product-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .product-desc {
+    font-size: 0.78rem;
+    color: rgba(245,240,232,0.7);
+    line-height: 1.6;
+  }
+
+  /* GREENHOUSE FEATURE */
+  .feature {
+    background: var(--green-deep);
+    color: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 70vh;
+  }
+
+  .feature-content {
+    padding: 7rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .feature-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .feature-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--green-light);
+  }
+
+  .feature-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .feature-body {
+    font-size: 0.92rem;
+    line-height: 1.85;
+    color: rgba(245,240,232,0.7);
+    font-weight: 300;
+    max-width: 420px;
+    margin-bottom: 3rem;
+  }
+
+  .feature-specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .spec-item {
+    border-top: 1px solid rgba(245,240,232,0.15);
+    padding-top: 1rem;
+  }
+
+  .spec-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--cream);
+    display: block;
+  }
+
+  .spec-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.45);
+    margin-top: 0.2rem;
+    display: block;
+  }
+
+  .feature-images {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .feature-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.75) brightness(0.85);
+    transition: filter 0.4s;
+  }
+
+  .feature-images img:hover { filter: saturate(1) brightness(1); }
+
+  /* WHY */
+  .why {
+    padding: 8rem 4rem;
+    background: var(--cream-warm);
+    text-align: center;
+  }
+
+  .why-header { margin-bottom: 5rem; }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+  }
+
+  .why-card {
+    background: var(--cream);
+    padding: 3rem 2.5rem;
+    text-align: left;
+  }
+
+  .why-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--border);
+    color: rgba(45,122,74,0.15);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .why-card-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--green-deep);
+    margin-bottom: 0.75rem;
+  }
+
+  .why-card-text {
+    font-size: 0.85rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  /* CONTACT */
+  .contact {
+    background: var(--green-deep);
+    padding: 8rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .contact-left {}
+
+  .contact-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-sub {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.6);
+    font-weight: 300;
+    margin-bottom: 3rem;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: rgba(245,240,232,0.7);
+  }
+
+  .contact-info-item span:first-child {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    width: 60px;
+    flex-shrink: 0;
+  }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .form-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.45);
+  }
+
+  .form-input, .form-select, .form-textarea {
+    background: rgba(245,240,232,0.07);
+    border: 1px solid rgba(245,240,232,0.15);
+    color: var(--cream);
+    padding: 0.85rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    border-radius: 0;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-input::placeholder, .form-textarea::placeholder { color: rgba(245,240,232,0.25); }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--green-light); }
+
+  .form-select option { background: var(--green-deep); color: var(--cream); }
+
+  .form-textarea { resize: vertical; min-height: 120px; }
+
+  .form-submit {
+    background: var(--green-fresh);
+    color: var(--cream);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    border-radius: 0;
+    align-self: flex-start;
+    margin-top: 0.5rem;
+  }
+
+  .form-submit:hover { background: var(--green-light); transform: translateY(-1px); }
+
+  /* FOOTER */
+  footer {
+    background: #060f09;
+    padding: 3rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(245,240,232,0.08);
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--cream);
+    opacity: 0.6;
+  }
+
+  .footer-copy {
+    font-size: 0.72rem;
+    color: rgba(245,240,232,0.3);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.35);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--green-light); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.6s 0.1s both; }
+  .hero-title { animation: fadeUp 0.6s 0.25s both; }
+  .hero-sub { animation: fadeUp 0.6s 0.4s both; }
+  .hero-actions { animation: fadeUp 0.6s 0.55s both; }
+  .hero-stats { animation: fadeUp 0.6s 0.7s both; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { display: none; }
+    .hero, .about, .feature, .contact { grid-template-columns: 1fr; }
+    .hero-right { min-height: 50vh; }
+    .hero-left { padding: 4rem 2rem; }
+    .hero-img-overlay { display: none; }
+    .products { padding: 4rem 2rem; }
+    .products-header { grid-template-columns: 1fr; }
+    .products-grid { grid-template-columns: 1fr 1fr; }
+    .about-images { min-height: 400px; }
+    .about-content { padding: 4rem 2rem; }
+    .feature-content { padding: 4rem 2rem; }
+    .feature-images { min-height: 300px; grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .why { padding: 4rem 2rem; }
+    .why-grid { grid-template-columns: 1fr; }
+    .contact { padding: 4rem 2rem; gap: 3rem; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <span class="nav-logo-main">Freshgate</span>
+    <span class="nav-logo-sub">East Africa Ltd</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#operations">Operations</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact" class="nav-cta">Partner With Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Rwanda · East Africa · Premium Agri-Export</p>
+    <h1 class="hero-title">
+      Fresh from<br>
+      <em>Rwanda's</em><br>
+      finest soils
+    </h1>
+    <p class="hero-sub">
+      Freshgate East Africa Ltd grows and exports premium avocados and greenhouse vegetables — cultivated with precision, delivered with integrity.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Enquire Now</a>
+      <a href="#products" class="btn-secondary">Our Produce →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-number">3+</span>
+        <span class="stat-label">Crop Varieties</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">Year-<br style="display:none">Round</span>
+        <span class="stat-label">Supply Available</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">Export</span>
+        <span class="stat-label">Ready Quality</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img class="hero-img-main" src="assets/images/hero-farm.jpg" alt="Freshgate avocado farm, Rwanda" />
+    <img class="hero-img-overlay" src="assets/images/hero-peppers.jpg" alt="Green bell peppers in greenhouse" />
+    <div class="hero-badge">
+      <span class="hero-badge-text">Export<br>Grade<br>Produce</span>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-inner">
+    <span class="marquee-item">Hass Avocados</span>
+    <span class="marquee-dot">·</span>
+    <span class="marquee-item">Bell Peppers</span>
+    <span class="marquee-dot">·</span>
+    <span class="marquee-item">Greenhouse Tomatoes</span>
+    <span class="marquee-dot">·</span>
+    <span class="marquee-item">Rwanda Origin</span>
+    <span class="marquee-dot">·</span>
+    <span class="marquee-item">Export Quality</span>
+    <span class="marquee-dot">·</span>
+    <span class="marquee-item">Precision Agriculture</span>
+    <span class="marquee-dot">·</span>
+    <span class="marquee-item">Hass Avocados</span>
+    <span class="marquee-dot">·</span>
+    <span class="marquee-item">Bell Peppers</span>
+    <span class="marquee-dot">·</span>
+    <span class="marquee-item">Greenhouse Tomatoes</span>
+    <span class="marquee-dot">·</span>
+    <span class="marquee-item">Rwanda Origin</span>
+    <span class="marquee-dot">·</span>
+    <span class="marquee-item">Export Quality</span>
+    <span class="marquee-dot">·</span>
+    <span class="marquee-item">Precision Agriculture</span>
+    <span class="marquee-dot">·</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-images">
+    <img class="about-img-bg" src="assets/images/about-orchard.jpg" alt="Avocado trees on Rwandan hillside" />
+    <img class="about-img-card" src="assets/images/about-greenhouse.jpg" alt="Greenhouse operations" />
+  </div>
+  <div class="about-content">
+    <p class="section-label">Who We Are</p>
+    <h2 class="section-title">Rooted in Rwanda.<br>Built for the World.</h2>
+    <p class="section-body">
+      Freshgate East Africa Ltd is a Rwandan agribusiness dedicated to growing premium export-quality produce. From hillside avocado orchards to state-of-the-art greenhouse operations, we combine traditional knowledge of Rwanda's fertile land with modern agricultural techniques.
+    </p>
+    <p class="section-body">
+      Our mission is to connect the abundant potential of East African agriculture to buyers and partners across the globe — with full traceability, consistent quality, and a commitment to the communities we grow in.
+    </p>
+    <div class="values-list">
+      <div class="value-item">
+        <div class="value-icon">◈</div>
+        <div class="value-text">
+          <strong>Quality First</strong>
+          <span>Every batch is graded to export standards — clean, sized, and traceable from farm to freight.</span>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">◈</div>
+        <div class="value-text">
+          <strong>Sustainable by Design</strong>
+          <span>Our greenhouses and orchard management practices are built for long-term soil health and water efficiency.</span>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">◈</div>
+        <div class="value-text">
+          <strong>Partnership Minded</strong>
+          <span>We work closely with buyers, investors, and local cooperatives to build lasting, mutually beneficial relationships.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="products-header">
+    <div>
+      <p class="section-label">Our Produce</p>
+      <h2 class="section-title">Crops grown<br>with intention</h2>
+    </div>
+    <p class="section-body" style="margin-bottom:0; align-self:flex-end;">
+      From the dark, pebbled skin of our Hass avocados to the vibrant red and green of our greenhouse-grown peppers, every crop reflects the care we put into the soil.
+    </p>
+  </div>
+  <div class="products-grid">
+    <div class="product-card">
+      <img class="product-img" src="assets/images/product-avocados.jpg" alt="Hass avocados on tree" />
+      <div class="product-overlay">
+        <p class="product-tag">Orchard · Export Grade</p>
+        <h3 class="product-name">Hass Avocados</h3>
+        <p class="product-desc">Rich, buttery, and grown on Rwanda's elevated terrain. Ready for export year-round.</p>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-img" src="assets/images/product-peppers.jpg" alt="Green bell peppers in greenhouse" />
+      <div class="product-overlay">
+        <p class="product-tag">Greenhouse · Year-Round</p>
+        <h3 class="product-name">Bell Peppers</h3>
+        <p class="product-desc">Green, red, and mixed bell peppers grown in precision-controlled greenhouse tunnels.</p>
+      </div>
+    </div>
+    <div class="product-card">
+      <img class="product-img" src="assets/images/product-tomatoes.jpg" alt="Tomatoes on the vine" />
+      <div class="product-overlay">
+        <p class="product-tag">Greenhouse · Fresh Market</p>
+        <h3 class="product-name">Tomatoes</h3>
+        <p class="product-desc">Plum and round varieties grown on trellised vines in UV-controlled poly tunnels.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GREENHOUSE FEATURE -->
+<section class="feature" id="operations">
+  <div class="feature-content">
+    <p class="feature-label">Operations</p>
+    <h2 class="feature-title">Modern greenhouses.<br>Rwanda's best land.</h2>
+    <p class="feature-body">
+      Our polytunnel greenhouse operations represent a new generation of Rwandan horticulture — controlled environments that eliminate weather risk, extend growing seasons, and produce consistently premium output for both local and export markets.
+    </p>
+    <div class="feature-specs">
+      <div class="spec-item">
+        <span class="spec-value">Drip</span>
+        <span class="spec-label">Irrigation System</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-value">Multi</span>
+        <span class="spec-label">Tunnel Structure</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-value">12mo</span>
+        <span class="spec-label">Growing Season</span>
+      </div>
+      <div class="spec-item">
+        <span class="spec-value">Export</span>
+        <span class="spec-label">Grade Standards</span>
+      </div>
+    </div>
+  </div>
+  <div class="feature-images">
+    <img src="assets/images/ops-exterior.jpg" alt="Greenhouse exterior view" />
+    <img src="assets/images/ops-interior.jpg" alt="Greenhouse interior peppers" />
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="why-header">
+    <p class="section-label" style="justify-content:center;">Why Freshgate</p>
+    <h2 class="section-title">What sets us apart</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <p class="why-number">01</p>
+      <p class="why-card-title">Traceable from Farm to Freight</p>
+      <p class="why-card-text">We maintain full lot traceability from planting through harvest and packing — giving buyers the documentation and confidence they need.</p>
+    </div>
+    <div class="why-card">
+      <p class="why-number">02</p>
+      <p class="why-card-title">Consistent, Reliable Supply</p>
+      <p class="why-card-text">Our combination of orchard crops and greenhouse production means we can offer year-round supply with predictable volumes and quality.</p>
+    </div>
+    <div class="why-card">
+      <p class="why-number">03</p>
+      <p class="why-card-title">Rwanda's Ideal Growing Conditions</p>
+      <p class="why-card-text">Situated at elevation with rich volcanic soil and a reliable dual rainy season, Rwanda produces avocados and vegetables of exceptional quality.</p>
+    </div>
+    <div class="why-card">
+      <p class="why-number">04</p>
+      <p class="why-card-title">Investor & Partner Ready</p>
+      <p class="why-card-text">We welcome conversations with impact investors, agri-finance institutions, and strategic export partners looking to grow with East Africa.</p>
+    </div>
+    <div class="why-card">
+      <p class="why-number">05</p>
+      <p class="why-card-title">Community Rooted</p>
+      <p class="why-card-text">Freshgate was built by Rwandans, for Rwanda. We are invested in the local economy and in reducing the country's dependence on imported produce.</p>
+    </div>
+    <div class="why-card">
+      <p class="why-number">06</p>
+      <p class="why-card-title">Modern Agri-Practices</p>
+      <p class="why-card-text">From precision drip irrigation to integrated pest management, we apply data-informed techniques to maximize yield and minimize input waste.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-left">
+    <p class="feature-label">Get in Touch</p>
+    <h2 class="contact-title">Let's grow<br>something<br>together.</h2>
+    <p class="contact-sub">Whether you're a buyer, exporter, investor, or potential partner — we'd love to hear from you. Reach out and let's start a conversation.</p>
+    <div class="contact-info">
+      <div class="contact-info-item">
+        <span>Location</span>
+        <span>Kigali, Rwanda</span>
+      </div>
+      <div class="contact-info-item">
+        <span>Focus</span>
+        <span>Avocados · Bell Peppers · Tomatoes</span>
+      </div>
+      <div class="contact-info-item">
+        <span>Markets</span>
+        <span>Regional & International Export</span>
+      </div>
+    </div>
+  </div>
+  <div class="contact-right">
+    <form class="contact-form" onsubmit="event.preventDefault(); this.innerHTML='<p style=\'color:var(--green-light);font-size:1rem;padding:2rem 0;\'>Thank you — we\'ll be in touch shortly.</p>'">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First Name</label>
+          <input class="form-input" type="text" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Company</label>
+          <input class="form-input" type="text" placeholder="Organization" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input class="form-input" type="email" placeholder="you@company.com" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label">I am interested in</label>
+        <select class="form-select form-input">
+          <option value="">Select a category</option>
+          <option>Buying / Importing Produce</option>
+          <option>Investment Opportunity</option>
+          <option>Export Partnership</option>
+          <option>General Enquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-textarea" placeholder="Tell us about your interest or requirements..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Enquiry →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Freshgate East Africa Ltd</span>
+  <span class="footer-copy">© 2025 Freshgate East Africa Ltd · Kigali, Rwanda</span>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 60 ? '0 2px 24px rgba(13,43,26,0.1)' : 'none';
+  });
+</script>
+
+</body>
+</html>
