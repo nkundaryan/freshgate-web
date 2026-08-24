@@ -26,6 +26,8 @@
     --text-muted: #7a9a82;
     --white: #ffffff;
     --border: rgba(45, 122, 74, 0.15);
+    --amber: #b87333;
+    --amber-light: #d4956a;
   }
 
   html { scroll-behavior: smooth; }
@@ -413,7 +415,7 @@
 
   .products-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 0;
   }
 
@@ -469,6 +471,68 @@
     font-size: 0.78rem;
     color: rgba(245,240,232,0.7);
     line-height: 1.6;
+  }
+
+  /* POULTRY SECTION */
+  .poultry {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 70vh;
+  }
+
+  .poultry-content {
+    padding: 7rem 5rem;
+    background: var(--cream-warm);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .poultry-images {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    overflow: hidden;
+  }
+
+  .poultry-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.85) brightness(0.9);
+    transition: filter 0.4s;
+  }
+
+  .poultry-images img:hover { filter: saturate(1) brightness(1); }
+
+  .poultry-specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+  }
+
+  .poultry-spec {
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+  }
+
+  .poultry-spec-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--amber);
+    display: block;
+    line-height: 1;
+  }
+
+  .poultry-spec-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+    display: block;
   }
 
   /* GREENHOUSE FEATURE */
@@ -859,7 +923,10 @@
     .hero-img-overlay { display: none; }
     .products { padding: 4rem 2rem; }
     .products-header { grid-template-columns: 1fr; }
-    .products-grid { grid-template-columns: 1fr 1fr; }
+    .products-grid { grid-template-columns: 1fr; }
+    .poultry { grid-template-columns: 1fr; }
+    .poultry-images { min-height: 360px; grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .poultry-content { padding: 4rem 2rem; }
     .about-images { min-height: 400px; }
     .about-content { padding: 4rem 2rem; }
     .feature-content { padding: 4rem 2rem; }
@@ -882,6 +949,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#products">Products</a></li>
+    <li><a href="#poultry">Poultry</a></li>
     <li><a href="#operations">Operations</a></li>
     <li><a href="#why">Why Us</a></li>
     <li><a href="#contact" class="nav-cta">Partner With Us</a></li>
@@ -898,7 +966,7 @@
       finest soils
     </h1>
     <p class="hero-sub">
-      Freshgate East Africa Ltd grows and exports premium avocados and greenhouse vegetables — cultivated with precision, delivered with integrity.
+      Freshgate East Africa Ltd grows and exports premium avocados, greenhouse vegetables, and free-range eggs — cultivated with precision, delivered with integrity.
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Enquire Now</a>
@@ -906,8 +974,8 @@
     </div>
     <div class="hero-stats">
       <div class="stat-item">
-        <span class="stat-number">3+</span>
-        <span class="stat-label">Crop Varieties</span>
+        <span class="stat-number">4+</span>
+        <span class="stat-label">Product Lines</span>
       </div>
       <div class="stat-item">
         <span class="stat-number">Year-<br style="display:none">Round</span>
@@ -937,6 +1005,8 @@
     <span class="marquee-dot">·</span>
     <span class="marquee-item">Greenhouse Tomatoes</span>
     <span class="marquee-dot">·</span>
+    <span class="marquee-item">Free-Range Eggs</span>
+    <span class="marquee-dot">·</span>
     <span class="marquee-item">Rwanda Origin</span>
     <span class="marquee-dot">·</span>
     <span class="marquee-item">Export Quality</span>
@@ -948,6 +1018,8 @@
     <span class="marquee-item">Bell Peppers</span>
     <span class="marquee-dot">·</span>
     <span class="marquee-item">Greenhouse Tomatoes</span>
+    <span class="marquee-dot">·</span>
+    <span class="marquee-item">Free-Range Eggs</span>
     <span class="marquee-dot">·</span>
     <span class="marquee-item">Rwanda Origin</span>
     <span class="marquee-dot">·</span>
@@ -971,7 +1043,7 @@
       Freshgate East Africa Ltd is a Rwandan agribusiness dedicated to growing premium export-quality produce. From hillside avocado orchards to state-of-the-art greenhouse operations, we combine traditional knowledge of Rwanda's fertile land with modern agricultural techniques.
     </p>
     <p class="section-body">
-      Our mission is to connect the abundant potential of East African agriculture to buyers and partners across the globe — with full traceability, consistent quality, and a commitment to the communities we grow in.
+      Our mission is to connect the abundant potential of East African agriculture with buyers, partners, and visitors across the globe by delivering fully traceable, consistently high-quality produce and authentic agritourism experiences that showcase the region's farms, food systems, culture, and communities, while sustaining a strong commitment to the communities in which it grows and operates.
     </p>
     <div class="values-list">
       <div class="value-item">
@@ -1007,7 +1079,7 @@
       <h2 class="section-title">Crops grown<br>with intention</h2>
     </div>
     <p class="section-body" style="margin-bottom:0; align-self:flex-end;">
-      From the dark, pebbled skin of our Hass avocados to the vibrant red and green of our greenhouse-grown peppers, every crop reflects the care we put into the soil.
+      From the dark, pebbled skin of our Hass avocados to the vibrant colours of our greenhouse peppers and the golden richness of free-range eggs — every product reflects the care we put into the land and the animals we raise.
     </p>
   </div>
   <div class="products-grid">
@@ -1035,6 +1107,50 @@
         <p class="product-desc">Plum and round varieties grown on trellised vines in UV-controlled poly tunnels.</p>
       </div>
     </div>
+    <div class="product-card">
+      <img class="product-img" src="assets/images/product-eggs.jpg" alt="Fresh free-range eggs" />
+      <div class="product-overlay">
+        <p class="product-tag">Poultry · Local & Export</p>
+        <h3 class="product-name">Free-Range Eggs</h3>
+        <p class="product-desc">Golden-yolk eggs from free-ranging hens raised on natural feed. Available in tray and bulk packaging.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POULTRY -->
+<section class="poultry" id="poultry">
+  <div class="poultry-content">
+    <p class="section-label">Poultry</p>
+    <h2 class="section-title">Free-range eggs,<br>raised with care.</h2>
+    <p class="section-body">
+      Our poultry operation raises hens in open, free-range conditions on natural feed — producing eggs with the deep golden yolks and clean, rich flavour that buyers and chefs recognise as a mark of genuine quality.
+    </p>
+    <p class="section-body">
+      Available in standard tray packs for local retail and hospitality, and in bulk formats for regional export. Every batch is collected fresh, candled, and graded before dispatch.
+    </p>
+    <div class="poultry-specs">
+      <div class="poultry-spec">
+        <span class="poultry-spec-value">Free</span>
+        <span class="poultry-spec-label">Range Raised</span>
+      </div>
+      <div class="poultry-spec">
+        <span class="poultry-spec-value">Daily</span>
+        <span class="poultry-spec-label">Fresh Collection</span>
+      </div>
+      <div class="poultry-spec">
+        <span class="poultry-spec-value">Graded</span>
+        <span class="poultry-spec-label">& Candled</span>
+      </div>
+      <div class="poultry-spec">
+        <span class="poultry-spec-value">Tray &amp; Bulk</span>
+        <span class="poultry-spec-label">Packaging Options</span>
+      </div>
+    </div>
+  </div>
+  <div class="poultry-images">
+    <img src="assets/images/poultry-hens.jpg" alt="Free-range hens on pasture" />
+    <img src="assets/images/poultry-eggs.jpg" alt="Fresh graded eggs ready for packing" />
   </div>
 </section>
 
@@ -1134,7 +1250,7 @@
       </div>
       <div class="contact-info-item">
         <span>Focus</span>
-        <span>Avocados · Bell Peppers · Tomatoes</span>
+        <span>Avocados · Bell Peppers · Tomatoes · Eggs</span>
       </div>
       <div class="contact-info-item">
         <span>Markets</span>
@@ -1171,6 +1287,8 @@
         <select class="form-select form-input" name="interest">
           <option value="">Select a category</option>
           <option>Buying / Importing Produce</option>
+          <option>Fresh Eggs — Local Supply</option>
+          <option>Fresh Eggs — Export / Bulk</option>
           <option>Investment Opportunity</option>
           <option>Export Partnership</option>
           <option>General Enquiry</option>
