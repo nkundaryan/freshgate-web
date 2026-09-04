@@ -415,8 +415,8 @@
 
   .products-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
   }
 
   .product-card {
@@ -447,7 +447,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 2rem;
+    padding: 1.25rem;
   }
 
   .product-tag {
@@ -460,7 +460,7 @@
 
   .product-name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 400;
     color: var(--cream);
     line-height: 1.1;
@@ -489,8 +489,6 @@
   }
 
   .poultry-images {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
     overflow: hidden;
   }
 
@@ -923,9 +921,8 @@
     .hero-img-overlay { display: none; }
     .products { padding: 4rem 2rem; }
     .products-header { grid-template-columns: 1fr; }
-    .products-grid { grid-template-columns: 1fr; }
     .poultry { grid-template-columns: 1fr; }
-    .poultry-images { min-height: 360px; grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .poultry-images { min-height: 300px; }
     .poultry-content { padding: 4rem 2rem; }
     .about-images { min-height: 400px; }
     .about-content { padding: 4rem 2rem; }
@@ -1149,7 +1146,6 @@
     </div>
   </div>
   <div class="poultry-images">
-    <img src="assets/images/poultry-hens.jpg" alt="Free-range hens on pasture" />
     <img src="assets/images/poultry-eggs.jpg" alt="Fresh graded eggs ready for packing" />
   </div>
 </section>
